@@ -7,3 +7,6 @@
 [submodule "vendor/flymake-python-pyflakes"]
 	path = vendor/flymake-python-pyflakes
 	url = git://github.com/purcell/flymake-python-pyflakes.git
+[submodule "vendor/emacs-flymake"]
+	path = vendor/emacs-flymake
+	url = git://github.com/illusori/emacs-flymake.git

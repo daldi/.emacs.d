@@ -26,9 +26,16 @@
 (global-ethan-wspace-mode 1)
 
 ;; flymake-python-pyflakes
+;; https://github.com/purcell/flymake-python-pyflakes
+;; https://github.com/purcell/flymake-easy
 ;; adding flake8/pep8/pythonlint support to emacs
 (require 'flymake-easy)
 (require 'flymake-python-pyflakes)
 (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
 (setq flymake-python-pyflakes-executable "flake8")
 (setq flymake-python-pyflakes-extra-arguments '("--max-line-length=100"))
+
+;; flymake upgrade
+;; https://github.com/illusori/emacs-flymake
+;; Let's run 16 checks at once instead.
+(setq flymake-max-parallel-syntax-checks 16)
