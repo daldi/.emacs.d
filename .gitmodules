@@ -1,3 +1,9 @@
 [submodule "vendor/ethan-wspace"]
 	path = vendor/ethan-wspace
 	url = git://github.com/glasserc/ethan-wspace.git
+[submodule "vendor/flymake-easy"]
+	path = vendor/flymake-easy
+	url = git://github.com/purcell/flymake-easy.git
+[submodule "vendor/flymake-python-pyflakes"]
+	path = vendor/flymake-python-pyflakes
+	url = git://github.com/purcell/flymake-python-pyflakes.git
