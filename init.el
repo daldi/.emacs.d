@@ -1,9 +1,16 @@
 ;; daldi's emacs
+;;
 ;; inspiration from www.EngimaCurry.com
 ;;
 
+;;Library Paths
 ;; All my emacs libraries will be under ~/.emacs.d
 (add-to-list 'load-path "~/.emacs.d")
+;; Add all top-level subdirectories of .emacs.d to the load path
+(progn (cd "~/.emacs.d")
+       (normal-top-level-add-subdirs-to-load-path))
+;; I like to keep third party libraries seperate in ~/.emacs.d/vendor
+(add-to-list 'load-path "~/.emacs.d/vendor")
 ;; Add all top-level subdirectories of .emacs.d to the load path
 (progn (cd "~/.emacs.d")
        (normal-top-level-add-subdirs-to-load-path))
@@ -14,6 +21,9 @@
 ;; Are we on a mac?
 (setq is-mac (equal system-type 'darwin))
 
+;;
+;;Libraries
+;;
 ;; mouse stuff
 
 ;; Pbcopy, stdin->osx clipboard buffer tool
@@ -39,3 +49,9 @@
 ;; https://github.com/illusori/emacs-flymake
 ;; Let's run 16 checks at once instead.
 (setq flymake-max-parallel-syntax-checks 16)
+
+;;
+;; daldi's libraries
+;;
+;; Better backup files
+(load-library "daldi-backups")
