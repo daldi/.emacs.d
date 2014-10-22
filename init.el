@@ -4,16 +4,15 @@
 ;;
 
 ;;Library Paths
-;; All my emacs libraries will be under ~/.emacs.d
-(add-to-list 'load-path "~/.emacs.d")
-;; Add all top-level subdirectories of .emacs.d to the load path
-(progn (cd "~/.emacs.d")
-       (normal-top-level-add-subdirs-to-load-path))
-;; I like to keep third party libraries seperate in ~/.emacs.d/vendor
-(add-to-list 'load-path "~/.emacs.d/vendor")
-;; Add all top-level subdirectories of .emacs.d to the load path
-(progn (cd "~/.emacs.d")
-       (normal-top-level-add-subdirs-to-load-path))
+;; All my emacs libraries will be under ~/.emacs.d/lisp
+(let ((default-directory "~/.emacs.d/lisp/"))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
+;; I like to keep third party libraries seperate in ~/.emacs.d/lisp/vendor
+;; make sure to load any subdirs under vendor
+(let ((default-directory "~/.emacs.d/vendor/"))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
 
 ;; See column numbers
 (setq column-number-mode t)
@@ -25,6 +24,9 @@
 ;;Libraries
 ;;
 ;; mouse stuff
+(setq select-active-regions nil)
+(setq mouse-drag-copy-region t)
+(global-set-key [mouse-2] 'mouse-yank-at-click)
 
 ;; Pbcopy, stdin->osx clipboard buffer tool
 (require 'pbcopy)
