@@ -6,6 +6,7 @@
 ;; Let's make sure to end with a newline
 ;; this is supersedeed by ethan-wspace
 ;; (setq require-final-newline t)
+(setq mode-require-final-newline nil)
 
 ;;Library Paths
 ;; All my emacs libraries will be under ~/.emacs.d/lisp
@@ -55,6 +56,12 @@
 ;; https://github.com/illusori/emacs-flymake
 ;; Let's run 16 checks at once instead.
 (setq flymake-max-parallel-syntax-checks 16)
+
+;; yoshiki's yaml mode
+;; https://github.com/yoshiki/yaml-mode
+;; adding this to the auto mode lists
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
 ;;
 ;; daldi's libraries
