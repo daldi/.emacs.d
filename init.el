@@ -3,6 +3,9 @@
 ;; inspiration from www.EngimaCurry.com
 ;;
 
+;; Let's make sure to end with a newline
+(setq require-final-newline t)
+
 ;;Library Paths
 ;; All my emacs libraries will be under ~/.emacs.d/lisp
 (let ((default-directory "~/.emacs.d/lisp/"))
